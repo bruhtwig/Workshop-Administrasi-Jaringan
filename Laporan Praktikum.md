@@ -36,44 +36,34 @@
   "sudo" (singkatan dari "superuser do") adalah alternatif yang lebih aman daripada perintah "su". Ketika pengguna menggunakan "sudo" untuk menjalankan perintah, ia hanya memerlukan kata sandi pengguna untuk memverifikasi identitasnya. Kemudian, pengguna dapat menjalankan perintah dengan izin khusus, seperti memperbarui sistem, menginstal program, atau menghapus file sistem. Perintah "sudo" dapat dikonfigurasi oleh administrator sistem untuk membatasi akses pengguna atau grup pengguna tertentu ke perintah atau tindakan tertentu.
 </p>
 
-<b>4. Package Maintenance</b>
-<p align="justify">
-  Package maintenance di linux adalah proses pemeliharaan dan manajemen paket-paket perangkat lunak yang telah terinstal pada sistem operasi. Pada Linux Debian, paket-paket perangkat lunak tersebut disimpan dalam repositori. Beberapa hal yang termasuk dalam package maintenance di Linux antara lain:
-</p>
+<b>4. Package Maintenance</b><br>
+<div align="justify">
+  Package maintenance di linux adalah proses pemeliharaan dan manajemen paket-paket perangkat lunak yang telah terinstal pada sistem operasi. Pada Linux Debian, paket-paket perangkat lunak tersebut disimpan dalam repositori. Beberapa hal yang termasuk dalam package maintenance di Linux antara lain:<br><br>
 
 1. Memperbarui paket: Proses ini melibatkan pengunduhan dan instalasi pembaruan paket terbaru yang telah dirilis oleh pengembang perangkat lunak. Ini bertujuan untuk memastikan bahwa sistem operasi memiliki versi terbaru dari paket yang terinstal dan juga untuk memperbaiki bug dan keamanan yang teridentifikasi.
 2. Memasang paket: Proses ini melibatkan penginstalan paket baru pada sistem operasi. Paket-paket tersebut bisa berupa aplikasi, driver, atau paket-paket lainnya yang dibutuhkan untuk menjalankan suatu program.
 3. Menghapus paket: Proses ini melibatkan penghapusan paket yang tidak dibutuhkan atau sudah tidak diperlukan lagi dari sistem operasi. Ini membantu dalam menghemat ruang penyimpanan dan juga memastikan sistem operasi tetap bersih dan terorganisir.
 4. Memperbaiki paket: Proses ini melibatkan perbaikan paket-paket yang rusak atau bermasalah pada sistem operasi.
 
-Package maintenance sangat penting untuk menjaga sistem operasi agar tetap aman dan stabil, serta memastikan bahwa paket-paket perangkat lunak yang terinstal berjalan dengan baik dan memenuhi persyaratan sistem. Ubuntu menyediakan berbagai alat manajemen paket yang mudah digunakan, seperti apt-get, aptitude, dan synaptic, yang memudahkan pengguna dalam melakukan tugas pemeliharaan paket pada sistem operasi.
+  Package maintenance sangat penting untuk menjaga sistem operasi agar tetap aman dan stabil, serta memastikan bahwa paket-paket perangkat lunak yang terinstal berjalan dengan baik dan memenuhi persyaratan sistem. Ubuntu menyediakan berbagai alat manajemen paket yang mudah digunakan, seperti apt-get, aptitude, dan synaptic, yang memudahkan pengguna dalam melakukan tugas pemeliharaan paket pada sistem operasi.<br>
 
--> Setting Repository
-<p align="justify">
-  Mengatur repository pada linux dilakukan dengan mengubah isi file /etc/apt/sources.list. Sebagai contoh, berikut langkah-langkah mengatur repository pada Debian:
-</p>
-1. Buka terminal pada Debian dengan menekan tombol Ctrl + Alt + T.
-2. Ketik perintah "sudo nano /etc/apt/sources.list" untuk membuka file sources.list dalam editor teks nano.
-3. Pada file sources.list, Anda akan melihat daftar repository yang sudah terdaftar di Ubuntu. Setiap repository dinyatakan dengan baris yang dimulai dengan "deb" atau "deb-src".
-4. Untuk menambahkan repository baru, salin dan tempelkan baris berikut di akhir file sources.list:
-5. deb [sumber]://[nama server]/[direktori]/[versi] [distro] [main] Contoh: deb http://deb.debian.org/debian/ bullseye main
-6. Baris di atas menunjukkan repository utama Debian yang tersedia pada versi Bullseye.
-7. Simpan dan keluar dari editor teks nano dengan menekan tombol Ctrl + X, kemudian tekan Y untuk menyimpan perubahan dan tekan Enter untuk keluar dari editor.
-8. Kemudian, jalankan perintah "sudo apt-get update" untuk memperbarui daftar repository Debian dengan repository baru yang telah ditambahkan.
-9. Setelah itu, Anda dapat menggunakan perintah "sudo apt-get install" untuk menginstal paket atau program yang tersedia pada repository yang telah ditambahkan.
+-> Setting Repository<br>
+  Mengatur repository pada linux dilakukan dengan mengubah isi file /etc/apt/sources.list. Sebagai contoh, berikut langkah-langkah mengatur repository pada Debian:<br>
+1. Buka terminal pada Debian dengan menekan tombol Ctrl + Alt + T.<br>
+2. Ketik perintah "sudo nano /etc/apt/sources.list" untuk membuka file sources.list dalam editor teks nano.<br>
+3. Pada file sources.list, Anda akan melihat daftar repository yang sudah terdaftar di Ubuntu. Setiap repository dinyatakan dengan baris yang dimulai dengan "deb" atau "deb-src".<br>
+4. Untuk menambahkan repository baru, salin dan tempelkan baris berikut di akhir file sources.list:<br>
+5. deb [sumber]://[nama server]/[direktori]/[versi] [distro] [main] Contoh: deb http://deb.debian.org/debian/ bullseye main<br>
+6. Baris di atas menunjukkan repository utama Debian yang tersedia pada versi Bullseye.<br>
+7. Simpan dan keluar dari editor teks nano dengan menekan tombol Ctrl + X, kemudian tekan Y untuk menyimpan perubahan dan tekan Enter untuk keluar dari editor.<br>
+8. Kemudian, jalankan perintah "sudo apt-get update" untuk memperbarui daftar repository Debian dengan repository baru yang telah ditambahkan.<br>
+9. Setelah itu, Anda dapat menggunakan perintah "sudo apt-get install" untuk menginstal paket atau program yang tersedia pada repository yang telah ditambahkan.<br>
 
-->Instalasi Package Linux
-a) mc
-<p align="justify">
-  MC (Midnight Commander) adalah sebuah aplikasi file manager untuk sistem operasi Linux yang tersedia sebagai package (pakage) pada repositori Linux.
-</p>
-
-b) net-tools
-<p align="justify">
-  Paket "net-tools" adalah paket yang berisi utilitas jaringan penting seperti ifconfig, route, netstat dan lain-lain.
-</p>
-
-c) htop
-<p align="justify">
-  htop adalah sebuah utilitas yang digunakan untuk memonitor kinerja sistem pada sistem operasi Linux. Htop akan menampilkan antarmuka pengguna grafis yang dapat digunakan untuk memonitor kinerja sistem, melihat penggunaan CPU,memori, disk, dan lain-lain.
-</p>
+->Instalasi Package Linux<br>
+a) mc<br>
+  MC (Midnight Commander) adalah sebuah aplikasi file manager untuk sistem operasi Linux yang tersedia sebagai package (pakage) pada repositori Linux.<br>
+b) net-tools<br>
+  Paket "net-tools" adalah paket yang berisi utilitas jaringan penting seperti ifconfig, route, netstat dan lain-lain.<br>
+c) htop<br>
+  htop adalah sebuah utilitas yang digunakan untuk memonitor kinerja sistem pada sistem operasi Linux. Htop akan menampilkan antarmuka pengguna grafis yang dapat digunakan untuk memonitor kinerja sistem, melihat penggunaan CPU,memori, disk, dan lain-lain.<br>
+</div>
