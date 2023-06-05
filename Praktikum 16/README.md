@@ -20,7 +20,7 @@ Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan
     apt install postfix dovecot-imapd dovecot-pop3d
     ```
 2. **Konfigurasi Postfix** <br>
-    Setelah installasi selesai akan muncul message box, kemudian pilih internet site agar komunikasi email menggunakan protokol SMTP secara langsung.
+    Setelah installasi selesai akan muncul message box, kemudian pilih internet site agar komunikasi email menggunakan protokol SMTP secara langsung.<br>
     <img src="./gambar/1.png"/><br>
     Selanjutnya masukkan nama domain yang akan digunakan.
     <img src="./gambar/2.png"/><br>
