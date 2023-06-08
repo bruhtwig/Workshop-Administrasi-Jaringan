@@ -11,9 +11,12 @@
 2. Marits Ikmal Yasin (3121600047)
 3. Rizka Dwi Fajriyah (3121600050)
 
+Pastikan sebelum kita melakukan konfigurasi kita sudah menambahkan konfigurasi MX pada db.kampus-05.takehome.com
+<br>
+![](gambar/dbkampus-05-mx.PNG)
 ### **Konfigurasi Postfix dan Dovecot**
 #
-Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan digunakan untuk konfigurasi mail server. Dalam contoh konfigurasi kali ini akan menggunakan nama domain mail.kampus-05.takehome.com yang dibuat menggunakan bind9 secara lokal.
+Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan digunakan untuk konfigurasi mail server. Dalam contoh konfigurasi kali ini akan menggunakan nama domain mail.kampus-05.takehome.com yang dibuat menggunakan bind9 secara lokal. 
 1. Update repository dan install package postfix.
     ```
     apt update
@@ -32,6 +35,12 @@ Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan
     ```
     inet_interfaces = all
     inet_protocols = all
+
+    #tambahkan pada baris mynetworks
+    0.0.0.0/0 
+
+    #Berikan comment bagian relayhost
+    #relayhost =
 
     #tambahkan baris berikut pada baris paling bawah
     home_mailbox = Maildir/
@@ -223,7 +232,8 @@ Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan
     ```
 
 ### **Testing**
-#
+#### **Testing Lokal**
+
 - buat user untuk mail terlebih dahulu
     ```
     adduser satu
@@ -259,3 +269,14 @@ Sebelum memulai install mail server, ada baiknya siapkan domain khusus yang akan
 
   Logout dan login ke user penerima, maka akan muncul pesan yang dikirim.
   <img src="./gambar/user student2.png"/><br>
+
+
+#### **Testing Eksternal**
+- Buka web mail roundcube di 'mail.kampus-05.takehome.com'
+- Selanjutnya login masukkan username dan password
+- Mengirim pesan kepada kelompok 6 dengan email `nicho@mail.kampus-06.takehome.com`
+  <br>
+  ![](gambar/postfix-ke-kelompok-6.PNG)
+- Menerima pesan dari kelompok 2 dari `alan@mail.kampus-02.takehome.com`
+  <br>
+  ![](gambar/mendapat%20massage%20dari%20kelompok%202.PNG)
